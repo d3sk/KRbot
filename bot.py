@@ -1,9 +1,4 @@
-import checks
-import asyncio
-import discord
-import requests
 import listeners
-from importlib import reload
 from discord.ext import commands
 
 try:
