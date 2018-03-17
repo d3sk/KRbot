@@ -19,4 +19,4 @@ HOST_TIMEZONE       = 'Australia/Sydney'
 
 DB_NAME             = 'storage.db'
 INVITE_URL          = 'https://discordapp.com/api/oauth2/authorize?client_id=<ID>&permissions=268437504&scope=bot'
-DEFAULT_LEAVE_MESSAGE = '`{{user}}` has left the server.'
+DEFAULT_LEAVE_MESSAGE = '`{{username}}#{{usertag}}` has left the server.'

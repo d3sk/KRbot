@@ -3,6 +3,7 @@ import database.moderation
 from discord.ext import commands
 import discord
 import constants
+import utility
 import checks
 import log
 
@@ -59,7 +60,7 @@ class CustomCommands:
             command_response = database.commands.get_command(message.guild, command_name)
             if not command_response:
                 return
-            await message.channel.send(command_response)
+            await message.channel.send(utility.format_string_with_message_data(command_response, message))
             await log.log_standard_action(message)
 
 

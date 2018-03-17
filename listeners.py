@@ -1,6 +1,7 @@
 import log
 import asyncio
 import discord
+import utility
 import constants
 import database
 from discord.ext import commands
@@ -41,9 +42,7 @@ async def anti_ghost(message: discord.Message):
 async def post_leave_message(member: discord.Member):
     leave_message = database.moderation.get_leave_message(member.guild.id)
     leave_message = constants.DEFAULT_LEAVE_MESSAGE if not leave_message else leave_message
-    leave_message = leave_message\
-        .replace('{{user}}', str(member))\
-        .replace('{{server}}', member.guild.name)
+    leave_message = utility.format_string_with_member_data(leave_message, member)
     channel = member.guild.get_channel(database.moderation.get_leave_channel_id(member.guild.id))
     if not channel:
         channel = member.guild.system_channel

@@ -1,5 +1,5 @@
 # Kevin Rudd
-A Discord moderation bot that you probably won't find useful. You're probably better off using 
+A Discord moderation bot that you probably won't find useful. You're better off using another.
 
 ## How to run
 
@@ -18,6 +18,19 @@ In subsequent runs, you only need to use `run.bat` (will not re-download everyth
 > `/help server set`
 
 * **help** *\[command\]* - Posts the default help message (for *command*, if present)
+
+### Text Formatting
+Anything that lets you set text supports some basic formatting.
+
+| Placeholder     | Will be replaced with      | Example            |
+|-----------------|----------------------------|--------------------|
+| {{username}}    | User's name                | Frizbunny          |
+| {{usertag}}     | User's tag (discriminator) | 1234               |
+| {{userid}}      | User's ID                  | 140427255531831296 |
+| {{usernick}}    | User's server nickname     | Rob                |
+| {{servername}}  | Server's name              | Friz's Lab 2.0     |
+| {{channelname}} | Current channel's name     | general            |
+| {{channelid}}   | Current channel's ID       | 382849552018833411 |
 
 
 ### Core
@@ -91,7 +104,8 @@ Does nothing if not set (see **server set role mute**)
 > `/commands add "friz github" https://github.com/Frizbunny/` would activate whenever `/friz github` is used.
 * **commands** - Lists all server commands (if a child command isn't used)
   * **add** *\<command_name\> \<reply_message\>* - Adds a command to the server. *command_name* can be multiple words,
-  but if so, must be in quotes.
+  but if so, must be in quotes. All text formatting is applied for the author of the message, ie. `{{username}}`
+  becomes the command caller's username.
   * **delete** *\<command_name\>* - Deletes a server command.
 ### Minecraft
 ***WIP cog. No documentation available yet! Soon, hopefully. Maybe. One day<sup>tm</sup>.***
