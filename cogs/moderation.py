@@ -118,7 +118,7 @@ class Moderation:
 
     @commands.command()
     @checks.is_guild_mod()
-    async def ban(self, ctx, member: discord.Member, *, reason: str = None):
+    async def kick(self, ctx, member: discord.Member, *, reason: str = None):
         if not ctx.guild.me.guild_permissions.kick_members:
             await ctx.send('I don\'t have permission to kick users!')
             return
