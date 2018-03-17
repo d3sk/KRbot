@@ -56,7 +56,7 @@ Anything that lets you set text supports some basic formatting.
 > 
 > Examples:  
 > `/server set role admin Guardian` would set *Guardian* as the admin role.  
-> `/server set message leave Bye bye, {{user}}!` sets the leave message.
+> `/server set message leave Bye bye, {{usernick}}!` sets the leave message.
 
 * **purge** \<amount\> - Deletes *amount* of messages from the channel. Max 200.
 * **mute** *\<user\>* - Applies the server's mute role to the user. 
