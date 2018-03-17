@@ -62,7 +62,7 @@ class Core:
                                                    description=str(e),
                                                    color=discord.Color.red()))
                 return
-            await ctx.message.add_reaction('👍')
+        await ctx.message.add_reaction('👍')
 
     @core.command()
     async def load(self, ctx, cog: str):
