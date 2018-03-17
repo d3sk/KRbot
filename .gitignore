@@ -1,0 +1,7 @@
+constants.py
+cogs/testing.py
+*.db
+*.pyc
+venv/
+.idea/
+__pycache__/
