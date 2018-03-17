@@ -34,8 +34,7 @@ Anything that lets you set text supports some basic formatting.
 
 
 ### Core
-> Only the bot owner can use these commands. Intended for debugging. Any changes made in *core*
-> require a complete bot restart.
+> Only the bot owner can use these commands. Intended for debugging. Cannot be unloaded.
 >
 > Examples:  
 > `/core get ip`  
