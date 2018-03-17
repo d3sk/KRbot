@@ -14,8 +14,7 @@ auto_loaded_extensions = [
     'roles',
     'moderation',
     'fun',
-    'commands',
-    'minecraft'
+    'commands'
 ]
 
 

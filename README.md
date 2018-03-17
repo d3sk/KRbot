@@ -106,5 +106,3 @@ Does nothing if not set (see **server set role mute**)
   but if so, must be in quotes. All text formatting is applied for the author of the message, ie. `{{username}}`
   becomes the command caller's username.
   * **delete** *\<command_name\>* - Deletes a server command.
-### Minecraft
-***WIP cog. No documentation available yet! Soon, hopefully. Maybe. One day<sup>tm</sup>.***
