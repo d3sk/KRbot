@@ -1,8 +1,7 @@
-import requests
-
 import checks
-import discord
+import aiohttp
 import asyncio
+import discord
 import constants
 import listeners
 from importlib import reload
@@ -104,8 +103,9 @@ class Core:
     @get.command()
     async def ip(self, ctx: commands.Context):
         with ctx.typing():
-            bot_ip = requests.get('https://api.ipify.org/').content.decode()
-            await ctx.author.send(bot_ip)
+            async with aiohttp.ClientSession() as session:
+                async with session.get('https://api.ipify.org') as r:
+                    await ctx.author.send(await r.text())
             await ctx.send(content='Host\'s public IP has been sent to your DMs.', delete_after=5)
 
     @get.command(aliases=['cogs'])
