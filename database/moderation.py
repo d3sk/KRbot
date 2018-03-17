@@ -8,7 +8,6 @@ db.query('''CREATE TABLE IF NOT EXISTS moderation (
               trusted_role_id   INTEGER   DEFAULT NULL,
               mute_role_id      INTEGER   DEFAULT NULL,
               log_channel_id    INTEGER   DEFAULT NULL,
-              star_channel_id   INTEGER   DEFAULT NULL,
               leave_channel_id  INTEGER   DEFAULT NULL,
               leave_message     TEXT      DEFAULT NULL,
               ghosting_enabled  INTEGER   DEFAULT 1
