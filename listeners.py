@@ -50,7 +50,6 @@ async def post_leave_message(member: discord.Member):
     await channel.send(leave_message)
 
 
-# Not being used at the moment
 async def listen_for_stars(reaction: discord.Reaction, member: discord.Member):
     if reaction.emoji == '🌟' and reaction.count > 1:
         star_channel = None
