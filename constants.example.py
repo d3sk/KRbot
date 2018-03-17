@@ -13,9 +13,6 @@ AUTO_DELETE_IDS     = [
 ]
 AUTO_DELETE_AFTER   = 6
 
-# Used for log timezone localisation.
-HOST_TIMEZONE       = 'Australia/Sydney'
-
 
 DB_NAME             = 'storage.db'
 INVITE_URL          = 'https://discordapp.com/api/oauth2/authorize?client_id=<ID>&permissions=268437504&scope=bot'
