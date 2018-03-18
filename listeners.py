@@ -35,7 +35,6 @@ async def anti_ghost(message: discord.Message):
         return
     if message.author.status == discord.Status.offline:
         await message.delete()
-        print('Deleted message from offline user')
         await message.author.send(f'👻 Ghosting is not enabled on {message.guild.name}.\n'
                                   f'Switch your status to online/afk/dnd instead of invisible.', delete_after=60)
 
@@ -64,7 +63,7 @@ async def listen_for_stars(reaction: discord.Reaction, member: discord.Member):
             embed.set_author(name=f'{reaction.message.author.name}#{reaction.message.author.discriminator}',
                              icon_url=reaction.message.author.avatar_url)
             embed.timestamp = reaction.message.created_at
-            embed.set_footer(text='Message Timestamp')
+            embed.set_footer(text=f'<#{reaction.message.channel.id}>')
             try:
                 embed.set_image(url=reaction.message.attachments[0].url)
             except (AttributeError, IndexError):
