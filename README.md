@@ -60,7 +60,7 @@ Anything that lets you set text supports some basic formatting.
 
 * **purge** \<amount\> - Deletes *amount* of messages from the channel. Max 200.
 * **mute** *\<user\>* - Applies the server's mute role to the user. 
-Does nothing if not set (see **server set role mute**)
+Does nothing if not set (see **/server set role mute**)
 * **kick** *\<user\>*
 * **ban** *\<user\>*
 * **server**
@@ -75,7 +75,7 @@ Does nothing if not set (see **server set role mute**)
       * **admin** *\<role name\>* - Sets role for admin permissions
       * **mod** *\<role name\>* - Sets role for moderator permissions
       * **trusted** *\<role name\>* - Sets role for trusted user permissions
-      * **mute** *\<role name\>* - 
+      * **mute** *\<role name\>* - Sets the role to be applied when using **/mute**. Can be any role. 
     * **ghosting** *<true/false>* - Sets whether the bot will automatically delete messages sent by
     invisible members.
 
