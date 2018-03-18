@@ -32,7 +32,8 @@ class CustomCommands:
     @checks.is_guild_trusted()
     async def add(self, ctx, name: str, *, response: str):
         if len(response) > 500:
-            ctx.send('')
+            await ctx.send(f'Command responses must be under 500 characters, out of respect to other users. '
+                           f'That was {len(response)} characters.')
             return
         if database.commands.get_command(ctx.guild, name):
             database.commands.delete_command(ctx.guild, name)
