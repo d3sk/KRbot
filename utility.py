@@ -1,4 +1,4 @@
-from discord import Message, Member
+from discord import Message, Member, TextChannel
 
 
 def __replace(string, replacement_dictionary):
@@ -29,6 +29,7 @@ def format_string_with_message_data(string: str, message: Message):
         'servername': message.guild.name,
         'channelname': message.channel.name,
         'channelid': message.channel.id,
+        'category': [message.channel.category, message.channel.name]
     })
 
 
@@ -39,4 +40,13 @@ def format_string_with_member_data(string: str, member: Member) -> str:
         'usertag': member.discriminator,
         'usernick': member.nick,
         'servername': member.guild.name,
+    })
+
+
+def format_with_channel_data(string, channel: TextChannel) -> str:
+    return __replace(string, {
+        'channelname': channel.name,
+        'channelid': channel.id,
+        'servername': channel.guild.id,
+        'category': [channel.category, channel.name]
     })
