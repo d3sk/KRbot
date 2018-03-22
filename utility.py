@@ -12,10 +12,11 @@ def __replace(string, replacement_dictionary):
         if isinstance(b, list):
             for fallback in b:
                 if fallback is not None:
-                    string = string.replace('{{' + str(a) + '}}', fallback)
+                    string = string.replace('{{' + str(a) + '}}', str(fallback))
                     break
         else:
-            string = string.replace('{{' + str(a) + '}}', str(b))
+            if b is not None:
+                string = string.replace('{{' + str(a) + '}}', str(b))
     return string
 
 
