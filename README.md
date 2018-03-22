@@ -22,15 +22,17 @@ In subsequent runs, you only need to use `run.bat` (will not re-download everyth
 ### Text Formatting
 Anything that lets you set text supports some basic formatting.
 
-| Placeholder     | Will be replaced with      | Example            |
-|-----------------|----------------------------|--------------------|
-| {{username}}    | User's name                | Frizbunny          |
-| {{usertag}}     | User's tag (discriminator) | 1234               |
-| {{userid}}      | User's ID                  | 140427255531831296 |
-| {{usernick}}    | User's server nickname     | Rob                |
-| {{servername}}  | Server's name              | Friz's Lab 2.0     |
-| {{channelname}} | Current channel's name     | general            |
-| {{channelid}}   | Current channel's ID       | 382849552018833411 |
+| Placeholder     | Will be replaced with                             | Example            |
+|-----------------|---------------------------------------------------|--------------------|
+| {{username}}    | User's name                                       | Frizbunny          |
+| {{usertag}}     | User's tag (discriminator)                        | 1234               |
+| {{userid}}      | User's ID                                         | 140427255531831296 |
+| {{usernick}}    | User's server nickname                            | Rob                |
+| {{servername}}  | Server's name                                     | Friz's Lab 2.0     |
+| {{channelname}} | Current channel's name                            | general            |
+| {{channelid}}   | Current channel's ID                              | 382849552018833411 |
+| {{category}}    | Current channel's category (channel name if none) | Words              |
+
 
 
 ### Core
