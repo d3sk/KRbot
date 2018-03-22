@@ -50,6 +50,14 @@ class CustomCommands:
         database.commands.delete_command(ctx.guild, name)
         await ctx.message.add_reaction('👍')
 
+    @_command.command()
+    @checks.is_guild_trusted()
+    async def raw(self, ctx, name: str):
+        cmd_result = database.commands.get_command(ctx.guild, name)
+        if cmd_result:
+            # Escape formatting characters
+            await ctx.send(cmd_result.replace('\\', '\\\\').replace('`', '\`').replace('<', '\<').replace('>', '\>').replace('*', '\*').replace('_', '\_'))
+
     @staticmethod
     async def custom_command_call(message: discord.Message):
         """
