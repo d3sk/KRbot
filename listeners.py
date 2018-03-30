@@ -69,7 +69,8 @@ async def listen_for_stars(emoji: discord.Emoji, message_id: int, channel_id: in
 
     for reaction in message.reactions:
         print(reaction.emoji)
-        if reaction.emoji == '🌟' and reaction.count >= 2 and not stars.is_starred(message):
+        required_stars = round(message.guild.member_count/20) if round(message.guild.member_count/20) > 1 else 2
+        if reaction.emoji == '🌟' and reaction.count >= required_stars and not stars.is_starred(message):
 
             embed = discord.Embed(description=reaction.message.content, color=discord.Color.gold())
             embed.set_author(name=f'{message.author.name}#{message.author.discriminator}',
