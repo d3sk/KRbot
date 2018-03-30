@@ -63,6 +63,8 @@ class CustomCommands:
         This static method is used as an event listener for on_message.
         It remains in this class as it only makes sense to have it here.
         """
+        if message.author.bot:
+            return
         length_of_prefix = len(constants.PREFIX)
         if message.content[0:length_of_prefix] == constants.PREFIX:
             command_name = message.content[length_of_prefix:].strip()
