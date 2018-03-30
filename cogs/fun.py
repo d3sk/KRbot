@@ -27,7 +27,7 @@ class Fun:
         choices = msg.split('|')
         if len(choices) > 1:
             result = random.choice(choices)
-            await ctx.send(f'🎲 {result.strip()}')
+            await ctx.send(f'🎲 ‍ {result.strip()}')
         else:
             await ctx.send(f'Separate your choices with a `|` character.\n'
                            f'Example: `{constants.PREFIX}choose Tatsumaki | Kevin Rudd`')
