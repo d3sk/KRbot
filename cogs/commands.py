@@ -1,4 +1,3 @@
-import asyncio
 import database.commands
 import database.moderation
 from discord.ext import commands
@@ -72,8 +71,6 @@ class CustomCommands:
                 return
             await message.channel.send(utility.format_string_with_message_data(command_response, message))
             await log.log_standard_action(message)
-            await asyncio.sleep(3)
-            await message.delete()
 
 
 def setup(bot):
