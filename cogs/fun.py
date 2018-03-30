@@ -1,6 +1,7 @@
 import constants
 import log
 import discord
+import random
 from discord.ext import commands
 
 
@@ -20,6 +21,16 @@ class Fun:
     @commands.command(name='quote', enabled=False, hidden=True)
     async def quote_message(self, ctx, message_id: int):
         pass
+
+    @commands.command()
+    async def choose(self, ctx, *, msg: str):
+        choices = msg.split('|')
+        if len(choices) > 1:
+            result = random.choice(choices)
+            await ctx.send(f'🎲 {result.strip()}')
+        else:
+            await ctx.send(f'Separate your choices with a `|` character.\n'
+                           f'Example: `{constants.PREFIX}choose Tatsumaki | Kevin Rudd`')
 
 
 def setup(bot):
