@@ -13,6 +13,7 @@ class Fun:
     async def echo_input(self, ctx, *, message: str):
         if len(message) < 300:
             await ctx.send(message)
+            await ctx.message.delete()
         else:
             await ctx.send(f'Echoes must be under 300 characters, that was {len(message)}.')
 
