@@ -59,11 +59,13 @@ async def listen_for_stars(emoji: discord.Emoji, message_id: int, channel_id: in
     print(message, channel)
     # Get the channel we will post the star message in (exit function if none)
     star_channel = None
-    for channel in message.guild.text_channels:
-        if channel.name == 'starboard' or channel.name == 'stars':
-            star_channel = channel
+    for guild_channel in message.guild.text_channels:
+        if guild_channel.name == 'starboard' or guild_channel.name == 'stars':
+            star_channel = guild_channel
             break
     if not star_channel:
+        return
+    if channel.is_nsfw() and not star_channel.is_nsfw():
         return
     print(star_channel)
 
