@@ -32,6 +32,10 @@ class Fun:
             await ctx.send(f'Separate your choices with a `|` character.\n'
                            f'Example: `{constants.PREFIX}choose Tatsumaki | Kevin Rudd`')
 
+    @commands.command()
+    async def rate(self, ctx, *, msg: str = None):
+        await ctx.send(f'I rate {"you" if not msg else msg} {round(random.random * 10, 1)}/10')
+
 
 def setup(bot):
     bot.add_cog(Fun(bot))
