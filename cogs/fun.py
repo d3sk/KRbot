@@ -33,8 +33,8 @@ class Fun:
                            f'Example: `{constants.PREFIX}choose Tatsumaki | Kevin Rudd`')
 
     @commands.command()
-    async def rate(self, ctx, *, msg: str = None):
-        await ctx.send(f'I rate {"you" if not msg else msg} {round(random.random * 10, 1)}/10')
+    async def rate(self, ctx, *, msg: str = "you"):
+        await ctx.send(f'I rate {msg.replace("me", "you")} {sum([ord(char) for char in msg])%100/10}/10')
 
 
 def setup(bot):
