@@ -33,8 +33,11 @@ class Fun:
                            f'Example: `{constants.PREFIX}choose Tatsumaki | Kevin Rudd`')
 
     @commands.command()
-    async def rate(self, ctx, *, msg: str = "you"):
-        await ctx.send(f'I rate {msg.replace("me", "you")} {sum([ord(char) for char in msg])%100/10}/10')
+    async def rate(self, ctx, *, msg: str = None):
+        if msg is None:
+            msg = f'{ctx.message.author.name}'
+        await ctx.send(f'I rate {msg.replace("me", "you").replace(ctx.message.author.name, "you")} '
+                       f'{sum([ord(char) for char in msg])%10}/10')
 
 
 def setup(bot):
