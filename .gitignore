@@ -4,4 +4,5 @@ cogs/testing.py
 *.pyc
 venv/
 .idea/
+.vscode/
 __pycache__/
