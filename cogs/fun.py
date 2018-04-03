@@ -37,7 +37,7 @@ class Fun:
         if msg is None:
             msg = f'{ctx.message.author.name}'
         await ctx.send(f'I rate {msg.replace("me", "you").replace(ctx.message.author.name, "you")} '
-                       f'{sum([ord(char) for char in msg])%10}/10')
+                       f'{sum([ord(char) for char in msg.strip()])%11}/10')
 
 
 def setup(bot):
