@@ -1,5 +1,9 @@
 import listeners
+import discord
+import utility
+import log
 from discord.ext import commands
+import database.commands
 
 try:
     # noinspection PyUnresolvedReferences
@@ -31,5 +35,19 @@ async def on_ready():
     listeners.start(bot)
 
 
+async def custom_command_call(message: discord.Message):
+    if message.author.bot:
+        return
+    length_of_prefix = len(constants.PREFIX)
+    if message.content[0:length_of_prefix] == constants.PREFIX:
+        command_name = message.content[length_of_prefix:].strip()
+        command_response = database.commands.get_command(message.guild, command_name)
+        if not command_response:
+            return
+        await message.channel.send(utility.format_string_with_message_data(command_response, message))
+        await log.log_standard_action(message)
+
+
 if __name__ == '__main__':
     bot.run(constants.TOKEN)
+    bot.add_listener(custom_command_call, 'on_message')
