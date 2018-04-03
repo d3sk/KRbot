@@ -24,13 +24,14 @@ class Fun:
 
     @commands.command()
     async def choose(self, ctx, *, msg: str):
-        choices = msg.split('|')
+        delimiter = '|'
+        choices = msg.split(delimiter)
         if len(choices) > 1:
             result = random.choice(choices)
             await ctx.send(f'🎲 ‍ {result.strip()}')
         else:
-            await ctx.send(f'Separate your choices with a `|` character.\n'
-                           f'Example: `{constants.PREFIX}choose Tatsumaki | Kevin Rudd`')
+            await ctx.send(f'Separate your choices with a `{delimiter}`.\n'
+                           f'Example: `{constants.PREFIX}choose Tatsumaki {delimiter} Kevin Rudd`')
 
     @commands.command()
     async def rate(self, ctx, *, msg: str = None):
